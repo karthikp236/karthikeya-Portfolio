@@ -294,8 +294,7 @@ export default function OrbScene() {
           noise={.6}
         />
 
-        <Environment preset="studio" />
-
+<Environment files="/studio_small_03_1k.hdr" />
         <EffectComposer multisampling={lowPower ? 0 : 4}>
           <Bloom
             intensity={lowPower ? .62 : 1.05}
