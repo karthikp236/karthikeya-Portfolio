@@ -1,0 +1,415 @@
+
+/* =========================================
+   IMMERSIVE THREE.JS PROJECT EXPERIENCE
+========================================= */
+
+.projects3d {
+  position: relative;
+  overflow: hidden;
+  padding: 130px 7% 65px;
+  background: #05070c;
+  color: #f5f5f5;
+}
+
+.projects3d-heading {
+  margin-bottom: 65px;
+}
+
+.projects3d-heading > span {
+  color: #8997a8;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: .16em;
+}
+
+.projects3d-heading h2 {
+  margin-top: 25px;
+  font-size: clamp(48px, 7vw, 90px);
+  line-height: .98;
+  letter-spacing: -.075em;
+}
+
+.projects3d-heading h2 i {
+  color: #8bdfff;
+  font-weight: 400;
+}
+
+.projects3d-heading p {
+  margin-top: 20px;
+  color: #8d98a6;
+  font-size: 14px;
+}
+
+/* MAIN STAGE */
+
+.projects3d-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  align-items: center;
+  gap: clamp(35px, 6vw, 90px);
+  min-height: 620px;
+}
+
+.projects3d-canvas {
+  position: relative;
+  height: 620px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--project-accent), transparent 65%);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 48%, color-mix(in srgb, var(--project-accent), transparent 87%), transparent 65%),
+    #080c13;
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.38),
+    inset 0 1px rgba(255,255,255,.05);
+  transition: border-color .5s ease;
+}
+
+.projects3d-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.canvas-label {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(188, 209, 229, .65);
+  font: 8px "DM Mono", monospace;
+  letter-spacing: .13em;
+  pointer-events: none;
+}
+
+.canvas-label-top {
+  top: 23px;
+}
+
+.canvas-label-bottom {
+  bottom: 23px;
+}
+
+/* PROJECT DETAILS */
+
+.projects3d-details {
+  min-width: 0;
+  animation: project-details-enter .55s ease both;
+}
+
+.details-number {
+  display: flex;
+  justify-content: space-between;
+  color: #8493a4;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .12em;
+}
+
+.details-number span {
+  color: #d3dce7;
+}
+
+.details-type {
+  display: block;
+  margin-top: 65px;
+  color: var(--project-accent);
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.projects3d-details h3 {
+  margin: 22px 0;
+  color: #f6f2ed;
+  font: clamp(42px, 5vw, 76px)/1.04 Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -.07em;
+  overflow-wrap: anywhere;
+}
+
+.details-description {
+  max-width: 550px;
+  color: rgba(222, 229, 237, .73);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.details-tech {
+  margin-top: 32px;
+  padding-top: 21px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.details-tech > span {
+  color: #8191a2;
+  font: 8px "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+
+.details-tech p {
+  margin-top: 13px;
+  color: #b3bfcd;
+  font: 10px/2 "DM Mono", monospace;
+}
+
+.details-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.details-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--project-accent), transparent 35%);
+  color: var(--project-accent);
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: gap .25s ease, color .25s ease;
+}
+
+.details-links a:hover {
+  gap: 17px;
+  color: white;
+}
+
+.details-links a span {
+  font-size: 16px;
+}
+
+/* PROJECT NAVIGATION */
+
+.projects3d-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 58px;
+}
+
+.projects3d-navigation > button {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(218,230,241,.3);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.projects3d-navigation > button:hover {
+  border-color: var(--project-accent);
+  color: var(--project-accent);
+  background: color-mix(in srgb, var(--project-accent), transparent 92%);
+}
+
+.project3d-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project3d-tabs button {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #6f7e8e;
+  font: 9px "DM Mono", monospace;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.project3d-tabs button span {
+  display: none;
+}
+
+.project3d-tabs button.selected {
+  color: var(--project-accent);
+  border-bottom-color: var(--project-accent);
+}
+
+.projects3d-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 55px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #748292;
+  font: 8px "DM Mono", monospace;
+  letter-spacing: .12em;
+}
+
+/* TRANSITION */
+
+@keyframes project-details-enter {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .projects3d {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .projects3d-stage {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .projects3d-canvas {
+    height: 540px;
+  }
+
+  .projects3d-details {
+    padding: 0 5px;
+  }
+
+  .details-type {
+    margin-top: 35px;
+  }
+
+  .projects3d-navigation {
+    margin-top: 38px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .projects3d {
+    padding: 85px 5% 55px;
+  }
+
+  .projects3d-heading {
+    margin-bottom: 40px;
+  }
+
+  .projects3d-heading h2 {
+    font-size: clamp(43px, 11vw, 65px);
+  }
+
+  .projects3d-canvas {
+    height: 430px;
+    border-radius: 16px;
+  }
+
+  .canvas-label {
+    left: 13px;
+    right: 13px;
+    font-size: 7px;
+  }
+
+  .projects3d-details h3 {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .details-description {
+    font-size: 13px;
+  }
+
+  .projects3d-navigation {
+    gap: 8px;
+  }
+
+  .projects3d-navigation > button {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .project3d-tabs {
+    gap: 8px;
+  }
+
+  .projects3d-footer {
+    flex-direction: column;
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects3d-details {
+    animation: none;
+  }
+
+  .projects3d-navigation > button,
+  .details-links a {
+    transition: none;
+  }
+}
+
+.projects3d-canvas {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 48%,
+      color-mix(in srgb, var(--project-accent) 17%, transparent),
+      transparent 65%
+    ),
+    #05070c;
+}
+
+.projects3d-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.projects3d-stage {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.projects3d-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.projects3d-details h3 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1000px) {
+  .projects3d-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .projects3d-canvas {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects3d-canvas {
+    min-height: 380px;
+  }
+}
